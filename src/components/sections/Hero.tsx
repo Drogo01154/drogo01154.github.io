@@ -171,16 +171,6 @@ export const Hero = () => {
                 </Suspense>
                 <span className="sr-only">Email</span>
               </a>
-               <a 
-                href="mailto:jamesdobbie.dev@gmail.com"
-                aria-label="Send me an email"
-                role="listitem"
-              >
-                <Suspense fallback={<div style={{ width: '1.5rem', height: '1.5rem' }} />}>
-                  <FaEnvelope aria-hidden="true" />
-                </Suspense>
-                <span className="sr-only">Email</span>
-              </a>
               <a 
                 href="/PDF/PortfolioCV.pdf"
                 download

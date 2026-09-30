@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { theme } from '../../styles/theme';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { /*FaGithub, FaExternalLinkAlt,*/ FaItchIo, FaYoutube  } from 'react-icons/fa';
 
 const ProjectsSection = styled.section`
   min-height: 100vh;
@@ -178,22 +178,52 @@ const ProjectLinks = styled.div`
 const projects = [
   {
     id: 1,
-    title: "Project One",
-    description: "A full-stack web application with real-time features and modern UI/UX design.",
-    image: "https://via.placeholder.com/400x200",
-    techStack: ["React", "Node.js", "MongoDB", "Socket.IO"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    title: "Pulbere",
+    description: "Worked collaboratively on an First Person Telekinesis shooter designing the core Telekinesis mechanic and AI using Unreals State Trees.",
+    image: "/Images/Projects/Pulbere.png",
+    techStack: ["Unreal Engine 5", "C++"],
+    itchUrl: "https://barely-stable-games.itch.io/pulbere",
+  },
+   {
+    id: 2,
+    title: "Space Ship Controller",
+    description: "Developed a custom space ship player controller for Unreal Engine with full degrees of movement.",
+    image: "/Images/Projects/SpaceShip.png",
+    techStack: ["Unreal Engine 5", "C++"],
+    youTubeUrl: "https://youtu.be/DbZRahriYhQ",
   },
   {
-    id: 2,
-    title: "Project Two",
-    description: "Mobile-first e-commerce platform with seamless payment integration.",
-    image: "https://via.placeholder.com/400x200",
-    techStack: ["Next.js", "TypeScript", "Stripe", "Tailwind"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    id: 3,
+    title: "FPS Level Editor",
+    description: "Worked collaboratively on an FPS game working on Playstation 5 hardware by developing a level editor for PC that would allow levels to be created by a user, serialised to a Json file and then playable on PS5 hardware for the collaborative project.",
+    image: "/Images/Projects/Editor.png",
+    techStack: ["ENTT" , "Nlohmann JSON", "Jolt", "Dear ImGui", "PS5", "C++"],
+    youTubeUrl: "https://youtube.com/watch?v=MeHMMtI4-Rg&feature=youtu.be",
   },
+  {
+    id: 4,
+    title: "Modular Shaders",
+    description: "Upadted an existing render to include shadowmapping for directional, point and spot lights, bloom post-processinf and a modular shader system that cleanly seperates the shaders and their data.",
+    image: "/Images/Projects/ShaderProject.png",
+    techStack: ["DirectX 11", "C++", "HLSL"],
+    youTubeUrl: "https://youtu.be/mmCqVFfUS0U",
+  },
+  {
+      id: 5,
+      title: "Nimbus Nemesis",
+      description: "Worked Collaboratively on a turn based strategy game developing the ship interior system, enemy AI using A* algorithm and a bunch more.",
+      image: "/Images/Projects/NimbusNemesis.png",
+      techStack: ["SFML 2", "C++"],
+      youTubeUrl: "https://youtu.be/ftzIIyMgfqk",
+    },
+  {
+      id: 6,
+      title: "Clowning Around",
+      description: "Worked Collaboratively during global game jam to make obstacle avoiding 2D game, working heavily on Item system and other bits of project.",
+      image: "/Images/Projects/ClowningAround.png",
+      techStack: ["Unity", "C#"],
+      itchUrl: "https://https://apolllloo.itch.io/clowning-around",
+    },
 ];
 
 const Projects = () => {
@@ -258,26 +288,55 @@ const Projects = () => {
                     <TechTag key={tech} role="listitem">{tech}</TechTag>
                   ))}
                 </TechStack>
-                <ProjectLinks>
-                  <a 
-                    href={project.githubUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    aria-label={`View ${project.title} source code on GitHub`}
-                  >
-                    <FaGithub aria-hidden="true" />
-                    <span className="sr-only">GitHub repository</span>
-                  </a>
-                  <a 
-                    href={project.liveUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    aria-label={`Visit ${project.title} live site`}
-                  >
-                    <FaExternalLinkAlt aria-hidden="true" />
-                    <span className="sr-only">Live site</span>
-                  </a>
-                </ProjectLinks>
+                {(/*project.githubUrl || */project.youTubeUrl || project.itchUrl) && (
+                  <ProjectLinks>
+                     {project.itchUrl && (
+                      <a
+                        href={project.itchUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View ${project.title} Itch.io webpage`}
+                      >
+                        <FaItchIo aria-hidden="true" />
+                        <span className="sr-only">Itch Page</span>
+                      </a>
+                    )}
+                    {project.youTubeUrl && (
+                      <a
+                        href={project.youTubeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View ${project.title} Youtube video Link`}
+                      >
+                        <FaYoutube aria-hidden="true" />
+                        <span className="sr-only">Youtube Link</span>
+                      </a>
+                    )}
+                    {/*project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View ${project.title} source code on GitHub`}
+                      >
+                        <FaGithub aria-hidden="true" />
+                        <span className="sr-only">GitHub repository</span>
+                      </a>
+                    )*/}
+                    
+                    {/*project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit ${project.title} live site`}
+                      >
+                        <FaExternalLinkAlt aria-hidden="true" />
+                        <span className="sr-only">Live site</span>
+                      </a>
+                    )*/}
+                  </ProjectLinks>
+                )}
               </ProjectContent>
             </ProjectCard>
           ))}

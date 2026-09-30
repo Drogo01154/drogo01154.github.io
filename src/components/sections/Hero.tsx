@@ -3,6 +3,7 @@ import { theme } from '../../styles/theme';
 import { keyframes } from '@emotion/react';
 import { lazy, Suspense } from 'react';
 const FaGithub = lazy(() => import('react-icons/fa').then(mod => ({ default: mod.FaGithub })));
+const FaFileDownload = lazy(() => import('react-icons/fa').then(mod => ({ default: mod.FaFileDownload })));
 const FaLinkedin = lazy(() => import('react-icons/fa').then(mod => ({ default: mod.FaLinkedin })));
 const FaEnvelope = lazy(() => import('react-icons/fa').then(mod => ({ default: mod.FaEnvelope })));
 
@@ -127,7 +128,7 @@ export const Hero = () => {
         <HeroContent>
           <div>
             <Title role="heading" aria-level={2}>
-              Hi, I'm James Dobbie
+              Hi, I'm James
             </Title>
             <Subtitle role="heading" aria-level={3}>
               Game Developer
@@ -169,6 +170,27 @@ export const Hero = () => {
                   <FaEnvelope aria-hidden="true" />
                 </Suspense>
                 <span className="sr-only">Email</span>
+              </a>
+               <a 
+                href="mailto:jamesdobbie.dev@gmail.com"
+                aria-label="Send me an email"
+                role="listitem"
+              >
+                <Suspense fallback={<div style={{ width: '1.5rem', height: '1.5rem' }} />}>
+                  <FaEnvelope aria-hidden="true" />
+                </Suspense>
+                <span className="sr-only">Email</span>
+              </a>
+              <a 
+                href="/PDF/PortfolioCV.pdf"
+                download
+                aria-label="Download my CV (PDF)"
+                role="listitem"
+              >
+                <Suspense fallback={<div style={{ width: '1.5rem', height: '1.5rem' }} />}>
+                  <FaFileDownload aria-hidden="true" />
+                </Suspense>
+                <span className="sr-only">Download CV</span>
               </a>
             </SocialLinks>
           </div>

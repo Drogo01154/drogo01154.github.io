@@ -1,22 +1,22 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { theme } from '../../styles/theme';
+
 import { 
-  FaReact, 
-  FaNodeJs, 
-  FaDatabase, 
-  FaDocker,
-  FaGitAlt,
-  FaAws
+  FaCode, 
+  FaCogs, 
+  FaCube, 
+  FaGitAlt, 
+  FaTools
 } from 'react-icons/fa';
 import { 
-  SiTypescript,
-  SiJavascript,
-  SiPython,
-  SiMongodb,
-  SiPostgresql,
-  SiRedux
+  SiCplusplus, 
+  SiUnrealengine, 
+  SiPlaystation, 
+  SiUnity
 } from 'react-icons/si';
+
+import { DiVisualstudio } from 'react-icons/di';
 
 const SkillsSection = styled.section`
   min-height: 100vh;
@@ -153,33 +153,34 @@ const SkillItem = styled(motion.div)`
 
 const skillCategories = [
   {
-    title: 'Frontend',
-    icon: <FaReact />,
+    title: 'Languages',
+    icon: <FaCode />,
     skills: [
-      { name: 'React', icon: <FaReact /> },
-      { name: 'TypeScript', icon: <SiTypescript /> },
-      { name: 'JavaScript', icon: <SiJavascript /> },
-      { name: 'Redux', icon: <SiRedux /> },
+      { name: 'C++', icon: <SiCplusplus /> },
+      { name: 'HLSL', icon: <FaCube /> },
+      { name: 'Blueprints', icon: <SiUnrealengine /> },
     ],
   },
   {
-    title: 'Backend',
-    icon: <FaNodeJs />,
+    title: 'Engines & APIs',
+    icon: <FaCogs />,
     skills: [
-      { name: 'Node.js', icon: <FaNodeJs /> },
-      { name: 'Python', icon: <SiPython /> },
-      { name: 'MongoDB', icon: <SiMongodb /> },
-      { name: 'PostgreSQL', icon: <SiPostgresql /> },
+      { name: 'Unreal Engine 5', icon: <SiUnrealengine /> },
+      { name: 'Unity', icon: <SiUnity />},
+      { name: 'DirectX 11', icon: <FaCube /> },
+      { name: 'PS5', icon: <SiPlaystation /> },
     ],
   },
   {
-    title: 'DevOps',
-    icon: <FaDocker />,
+    title: 'Libraries & Tools',
+    icon: <FaTools />,
     skills: [
-      { name: 'Docker', icon: <FaDocker /> },
+      { name: 'ENTT' },
+      { name: 'Jolt Physics' },
+      { name: 'Dear ImGui' },
+      { name: 'nlohmann/json' },
       { name: 'Git', icon: <FaGitAlt /> },
-      { name: 'AWS', icon: <FaAws /> },
-      { name: 'CI/CD', icon: <FaDatabase /> },
+      { name: 'Visual Studio', icon: <DiVisualstudio /> },
     ],
   },
 ];
@@ -243,7 +244,7 @@ const Skills = () => {
                     variants={itemVariants}
                     role="listitem"
                   >
-                    <span aria-hidden="true">{skill.icon}</span>
+                    {skill.icon && <span aria-hidden="true">{skill.icon}</span>}
                     <span>{skill.name}</span>
                     <span className="sr-only">{`${skill.name} - ${category.title} skill`}</span>
                   </SkillItem>

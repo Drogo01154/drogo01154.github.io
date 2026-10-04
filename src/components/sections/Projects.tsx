@@ -155,6 +155,7 @@ const TechTag = styled.span`
 
 const ProjectLinks = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: ${theme.spacing.md};
   margin-top: auto;
   padding-top: ${theme.spacing.md};
@@ -290,6 +291,7 @@ const Projects = () => {
                 </TechStack>
                 {(/*project.githubUrl || */project.youTubeUrl || project.itchUrl) && (
                   <ProjectLinks>
+                    <span style={{ width: '100%' }}>Project Links:</span>
                      {project.itchUrl && (
                       <a
                         href={project.itchUrl}

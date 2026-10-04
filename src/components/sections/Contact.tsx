@@ -213,6 +213,17 @@ const Contact = () => {
               <FaEnvelope aria-hidden="true" />
               <span>jamesdobbie.dev@gmail.com</span>
             </ContactEmail>
+            <ContactEmail
+              href="/PDF/PortfolioCV.pdf"
+              download="/PDF/PortfolioCV.pdf"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Download my CV as a PDF"
+            >
+              <FaFileDownload aria-hidden="true" />
+              <span>Download CV</span>
+            </ContactEmail>
             <SocialLinks 
               variants={itemVariants}
               role="list"
@@ -239,16 +250,6 @@ const Contact = () => {
               >
                 <FaLinkedin aria-hidden="true" />
                 <span className="sr-only">LinkedIn</span>
-              </SocialLink>
-              <SocialLink 
-                href="/PDF/PortfolioCV.pdf"
-                download
-                whileHover={{ y: -5 }}
-                role="listitem"
-                aria-label="Download my CV (PDF)"
-              >
-                <FaFileDownload  aria-hidden="true" />
-                <span className="sr-only">Download CV</span>
               </SocialLink>
             </SocialLinks>
           </ContactContent>
